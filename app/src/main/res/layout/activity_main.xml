@@ -7,50 +7,34 @@
 
     <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="fill_parent"
         android:layout_centerInParent="true"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
         android:gravity="center"
         android:orientation="vertical" >
 
-
-
-        <TextView
-            android:id="@+id/name"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recylcerView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="13dp"
-            android:hint="@string/name"
-            android:textColor="@color/lbl_name"
-            android:textSize="13dp" />
-
-        <TextView
-            android:id="@+id/email"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="13dp"
-            android:textSize="13dp"
-            android:hint="@string/hint_email"/>
+            android:layout_height="550dp"
+            tools:layout_editor_absoluteX="745dp"
+            tools:layout_editor_absoluteY="-51dp" />
 
 
-
-        <Button
-            android:id="@+id/current_location"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40dip"
-            android:background="@color/btn_logut_bg"
-            android:text="Current Location"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:textSize="15dp" />
+<!--        <Button-->
+<!--            android:id="@+id/current_location"-->
+<!--            android:layout_width="fill_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="300dp"-->
+<!--            android:background="@color/btn_logut_bg"-->
+<!--            android:text="Current Location"-->
+<!--            android:textAllCaps="false"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="15dp" />-->
 
         <Button
             android:id="@+id/btnLogout"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dip"
             android:background="@color/btn_logut_bg"
             android:text="@string/btn_logout"
             android:textAllCaps="false"

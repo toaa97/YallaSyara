@@ -1,7 +1,7 @@
 package com.example.yallasyara.app;
 
 public class AppConfig {
-    static String ip="192.168.1.111";
+    static String ip="192.168.1.115";
     //192.168.1.111
     //172.20.10.2
     // Server user login url
