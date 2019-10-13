@@ -53,62 +53,10 @@
             android:textColor="#000000" />
 
         <TextView
-            android:id="@+id/textLatitude"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/textViewYear"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="5dp"
-            android:layout_toRightOf="@id/imageView"
-            android:text="Latitude:"
-            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
-            android:textColor="#000000"
-            android:textStyle="bold"/>
-
-        <TextView
-            android:id="@+id/textViewLatitude"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/textViewYear"
-            android:layout_marginLeft="65dp"
-            android:layout_marginTop="5dp"
-            android:layout_toRightOf="@id/imageView"
-            android:paddingLeft="15dp"
-            android:paddingRight="15dp"
-            android:text="4.7"
-            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
-            android:textColor="#000000" />
-
-        <TextView
-            android:id="@+id/textLongitude"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/textViewLatitude"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="5dp"
-            android:layout_toRightOf="@id/imageView"
-            android:text="Longitude:"
-            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
-            android:textColor="#000000"
-            android:textStyle="bold"/>
-
-        <TextView
-            android:id="@+id/textViewLongitude"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/textViewLatitude"
-            android:layout_marginLeft="80dp"
-            android:layout_marginTop="5dp"
-            android:layout_toRightOf="@id/imageView"
-            android:text="INR 56990"
-            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
-            android:textColor="#000000" />
-
-        <TextView
             android:id="@+id/textDistance"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/textViewLongitude"
+            android:layout_below="@id/textViewFuelLevel"
             android:layout_marginLeft="5dp"
             android:layout_marginTop="5dp"
             android:layout_toRightOf="@id/imageView"
@@ -121,8 +69,8 @@
             android:id="@+id/textViewDistance"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/textViewLongitude"
-            android:layout_marginLeft="80dp"
+            android:layout_below="@id/textViewFuelLevel"
+            android:layout_marginLeft="70dp"
             android:layout_marginTop="5dp"
             android:layout_toRightOf="@id/imageView"
             android:text="INR 56990"
@@ -133,8 +81,8 @@
             android:id="@+id/ViewDistance"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/textViewLongitude"
-            android:layout_marginLeft="135dp"
+            android:layout_below="@id/textViewFuelLevel"
+            android:layout_marginLeft="108dp"
             android:layout_marginTop="5dp"
             android:layout_toRightOf="@id/imageView"
             android:text="KM"
@@ -145,7 +93,7 @@
             android:id="@+id/textFuelLevel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/textViewDistance"
+            android:layout_below="@id/textViewYear"
             android:layout_marginLeft="5dp"
             android:layout_marginTop="5dp"
             android:layout_toRightOf="@id/imageView"
@@ -158,7 +106,7 @@
             android:id="@+id/textViewFuelLevel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/textViewDistance"
+            android:layout_below="@id/textViewYear"
             android:layout_marginLeft="80dp"
             android:layout_marginTop="5dp"
             android:layout_toRightOf="@id/imageView"
@@ -170,11 +118,23 @@
             android:id="@+id/Viewfuel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/textViewDistance"
+            android:layout_below="@id/textViewYear"
             android:layout_marginLeft="100dp"
             android:layout_marginTop="5dp"
             android:layout_toRightOf="@id/imageView"
             android:text="%"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/Viewline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textViewDistance"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="15dp"
+            android:layout_toRightOf="@id/imageView"
+            android:text="------------------------------------------------------"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
             android:textColor="#000000" />
     </RelativeLayout>
