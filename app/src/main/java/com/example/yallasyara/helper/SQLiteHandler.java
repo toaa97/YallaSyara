@@ -32,7 +32,6 @@ public class SQLiteHandler extends SQLiteOpenHelper{
     private static final String KEY_NATIONALITY = "nationality";
     private static final String KEY_PHONE_NUMBER = "phone_number";
 
-
     public SQLiteHandler(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
@@ -45,7 +44,6 @@ public class SQLiteHandler extends SQLiteOpenHelper{
                 + KEY_EMAIL + " TEXT UNIQUE," + KEY_UID + " TEXT,"
                 + KEY_CREATED_AT + " TEXT," + KEY_AGE + "INTEGER, " + KEY_NATIONALITY + " TEXT," + KEY_PHONE_NUMBER + " INTEGER " + ")";
         db.execSQL(CREATE_LOGIN_TABLE);
-
 
         Log.d(TAG, "Database tables created");
     }

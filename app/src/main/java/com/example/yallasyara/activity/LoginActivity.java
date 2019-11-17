@@ -35,6 +35,7 @@ public class LoginActivity extends Activity {
     private ProgressDialog pDialog;
     private SessionManager session;
     private SQLiteHandler db;
+    String user_id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +61,7 @@ public class LoginActivity extends Activity {
         if (session.isLoggedIn()) {
             // User is already logged in. Take him to main activity
             Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+            intent.putExtra("id",user_id);
             startActivity(intent);
             finish();
         }
@@ -130,6 +132,9 @@ public class LoginActivity extends Activity {
                         String uid = jObj.getString("uid");
 
                         JSONObject user = jObj.getJSONObject("user");
+                        String id= user.getString("id");
+                        user_id=id;
+                        //Log.d("user_id",user_id);
                         String name = user.getString("name");
                         String email = user.getString("email");
                         String created_at = user
@@ -144,6 +149,7 @@ public class LoginActivity extends Activity {
                         // Launch main activity
                         Intent intent = new Intent(LoginActivity.this,
                                 MainActivity.class);
+                        intent.putExtra("id",id);
                         startActivity(intent);
                         finish();
                     } else {

@@ -18,6 +18,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.yallasyara.R;
+import com.example.yallasyara.app.AppConfig;
 import com.example.yallasyara.helper.SQLiteHandler;
 import com.example.yallasyara.helper.SessionManager;
 import com.google.android.gms.location.LocationListener;
@@ -38,11 +39,7 @@ public class MainActivity extends MapsActivity implements LocationListener {
     private SQLiteHandler db;
     private SessionManager session;
 
-    //this is the JSON Data URL
-    //make sure you are using the correct ip else it will not work
-    private static final String URL_PRODUCTS = "http://192.168.1.115/android_login_api/cars.php";
 
-    //a list to store all the products
     List<Car> carList;
 
     //the recyclerview
@@ -50,6 +47,7 @@ public class MainActivity extends MapsActivity implements LocationListener {
     carsAdapter adapter;
     public double cLat;
     public double cLng;
+    String user_id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +58,8 @@ public class MainActivity extends MapsActivity implements LocationListener {
             ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);
             return;
         }
+
+
 
         btnLogout = (Button) findViewById(R.id.btnLogout);
 
@@ -90,9 +90,12 @@ public class MainActivity extends MapsActivity implements LocationListener {
         //initializing the productlist
         carList = new ArrayList<>();
 
-        //this method will fetch and parse json
-        //to display it in recyclerview
-        //loadCars();
+        Intent receiveIntent= this.getIntent();
+        user_id=receiveIntent.getStringExtra("id");
+       // Log.d("userrrrr",user_id);
+
+
+
 
 
     }
@@ -105,6 +108,8 @@ public class MainActivity extends MapsActivity implements LocationListener {
         cLat=location.getLatitude();
         cLng=location.getLongitude();
 
+        //this method will fetch and parse json
+        //to display it in recyclerview
         loadCars();
     }
 
@@ -115,7 +120,7 @@ public class MainActivity extends MapsActivity implements LocationListener {
      * Then we have a Response Listener and a Error Listener
      * In response listener we will get the JSON response as a String
      * */
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, URL_PRODUCTS,
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, AppConfig.URL_CARS,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -141,10 +146,11 @@ public class MainActivity extends MapsActivity implements LocationListener {
                                         cLng
                                 ));
                             }
+
                             Collections.sort(carList);
                             //Collections.reverse(carList);
                             //creating adapter object and setting it to recyclerview
-                            adapter = new carsAdapter(MainActivity.this, carList);
+                            adapter = new carsAdapter(MainActivity.this, carList,user_id,cLat,cLng);
                             recyclerView.setAdapter(adapter);
                         } catch (JSONException e) {
                             e.printStackTrace();
